@@ -6,6 +6,30 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+
+  --primary: 233, 67%, 56%;
+  --primary-foreground: 0 0% 100%;
+
+  --secondary: 28, 100%, 52%;
+  --secondary-foreground: 0 0% 100%;
+
+  --muted: 210 40% 96%;
+  --muted-foreground: 215 16% 47%;
+
+  /* Color */
+  --orange-500: 28, 100%, 52%;
+  --blue-500: 233, 67%, 56%;
+  --blue-700: 248, 70%, 36%;
+  --neutral-100: 0, 0%, 100%;
+  --neutral-200: 250, 6%, 84%;
+  --neutral-300: 240, 6%, 70%;
+  --neutral-600: 243, 23%, 30%;
+  --neutral-700: 243, 23%, 24%;
+  --neutral-800: 243, 27%, 20%;
+  --neutral-900: 243, 96%, 9%;
+
+  /* Radius */
+  --radius: 0.5rem;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -18,12 +42,7 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: hsl(var(--neutral-900))
 }
 
 @layer utilities {
