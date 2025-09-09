@@ -14,10 +14,72 @@ const config: Config = {
   			'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))'
   		},
   		borderRadius: {
-  			lg: 'var(--radius)',
-  			md: 'calc(var(--radius) - 2px)',
-  			sm: 'calc(var(--radius) - 4px)'
+  			lg: '0.75rem',
+  			md: '0.625rem',
+  			sm: '0.5rem'
   		},
+			fontFamily: {
+				sans: ["var(--font-dm-sans)", "sans-serif"],
+				bricolage: ["var(--font-bricolage-grotesque)", "sans-serif"],
+			},
+			fontSize: {
+				"preset-1": [
+					"96px",
+					{
+						lineHeight: "100%",
+						letterSpacing: "-2px",
+					},
+				],
+				"preset-2": [
+					"52px",
+					{
+						lineHeight: "100%",
+						letterSpacing: "0px",
+					},
+				],
+				"preset-3": [
+					"32px",
+					{
+						lineHeight: "100%",
+						letterSpacing: "0px",
+					},
+				],
+				"preset-4": [
+					"28px",
+					{
+						lineHeight: "100%",
+						letterSpacing: "0px",
+					},
+				],
+				"preset-5": [
+					"20px",
+					{
+						lineHeight: "100%",
+						letterSpacing: "0px",
+					},
+				],
+				"preset-6": [
+					"18px",
+					{
+						lineHeight: "100%",
+						letterSpacing: "0px",
+					},
+				],
+				"preset-7": [
+					"16px",
+					{
+						lineHeight: "100%",
+						letterSpacing: "0px",
+					},
+				],
+				"preset-8": [
+					"14px",
+					{
+						lineHeight: "100%",
+						letterSpacing: "0px",
+					},
+				],
+			},
   		colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
@@ -49,8 +111,25 @@ const config: Config = {
   				DEFAULT: 'hsl(var(--destructive))',
   				foreground: 'hsl(var(--destructive-foreground))'
   			},
+				neutral: {
+					100: "hsl(0, 0%, 100%)",
+					200: "hsl(250, 6%, 84%)",
+					300: "hsl(240, 6%, 70%)",
+					600: "hsl(243, 23%, 30%)",
+					700: "hsl(243, 23%, 24%)",
+					800: "hsl(243, 27%, 20%)",
+					900: "hsl(243, 96%, 9%)",
+				},
+				blue: {
+					DEFAULT: 'hsl(var(--blue-500))',
+					500: 'hsl(var(--blue-500))',
+					700: 'hsl(var(--blue-700))'
+				},
+				orange: {
+					DEFAULT: 'hsl(var(--orange-500))'
+				},
   			border: 'hsl(var(--border))',
-  			input: 'hsl(var(--input))',
+  			input: 'hsl(var(--neutral-800))',
   			ring: 'hsl(var(--ring))',
   			chart: {
   				'1': 'hsl(var(--chart-1))',

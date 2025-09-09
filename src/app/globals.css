@@ -27,9 +27,6 @@
   --neutral-700: 243, 23%, 24%;
   --neutral-800: 243, 27%, 20%;
   --neutral-900: 243, 96%, 9%;
-
-  /* Radius */
-  --radius: 0.5rem;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -42,7 +39,7 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: hsl(var(--neutral-900))
+  background: hsl(var(--neutral-900));
 }
 
 @layer utilities {
