@@ -11,7 +11,7 @@ type Units = "metric" | "imperial";
 
 export default function Header() {
   const { units, setUnits } = useWeather();
-  const [unitSystem, setUnitSystem] = useState<Units>("metric");
+  const [unitSystem, setUnitSystem] = useState<Units>("imperial");
   
   const handleChangeUnits = (unit: string, unit_item: string) => {
     setUnits(prev => ({
@@ -21,9 +21,9 @@ export default function Header() {
   }
 
   const handleChangeUnitSystem = () => {
+    setUnits(UNITS_SYSTEM_MAP[unitSystem]);
     const currentUnit = unitSystem === "metric" ? "imperial" : "metric";
     setUnitSystem(currentUnit);
-    setUnits(UNITS_SYSTEM_MAP[currentUnit]);
   }
 
   return (
