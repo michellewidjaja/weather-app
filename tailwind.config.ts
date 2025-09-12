@@ -24,56 +24,56 @@ const config: Config = {
 			},
 			fontSize: {
 				"preset-1": [
-					"96px",
+					"6rem",
 					{
 						lineHeight: "100%",
-						letterSpacing: "-2px",
+						letterSpacing: "-0.125rem",
 					},
 				],
 				"preset-2": [
-					"52px",
+					"3.25rem",
 					{
 						lineHeight: "100%",
 						letterSpacing: "0px",
 					},
 				],
 				"preset-3": [
-					"32px",
+					"2rem",
 					{
 						lineHeight: "100%",
 						letterSpacing: "0px",
 					},
 				],
 				"preset-4": [
-					"28px",
+					"1.75rem",
 					{
 						lineHeight: "100%",
 						letterSpacing: "0px",
 					},
 				],
 				"preset-5": [
-					"20px",
+					"1.25rem",
 					{
 						lineHeight: "100%",
 						letterSpacing: "0px",
 					},
 				],
 				"preset-6": [
-					"18px",
+					"1.125rem",
 					{
 						lineHeight: "100%",
 						letterSpacing: "0px",
 					},
 				],
 				"preset-7": [
-					"16px",
+					"1rem",
 					{
 						lineHeight: "100%",
 						letterSpacing: "0px",
 					},
 				],
 				"preset-8": [
-					"14px",
+					"0.875rem",
 					{
 						lineHeight: "100%",
 						letterSpacing: "0px",

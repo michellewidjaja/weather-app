@@ -47,3 +47,24 @@ body {
     text-wrap: balance;
   }
 }
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: 243, 27%, 20%;
+  border-radius: 9999px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #302F4A;
+  border-radius: 9999px;
+  border: 1px solid #3C3B5E;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #302F4A;
+}
+
