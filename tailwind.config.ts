@@ -112,6 +112,7 @@ const config: Config = {
   				foreground: 'hsl(var(--destructive-foreground))'
   			},
 				neutral: {
+					0: "hsl(0, 0%, 100%)",
 					100: "hsl(0, 0%, 100%)",
 					200: "hsl(250, 6%, 84%)",
 					300: "hsl(240, 6%, 70%)",

@@ -75,7 +75,7 @@ export default function HourlyForecast({ hourlyResult: hourly, dailyResult: dail
             </DropdownMenuContent>
           </DropdownMenu>
         </CardTitle>
-        <CardContent className="flex flex-col gap-4 overflow-y-scroll max-h-[40rem] p-4 custom-scrollbar">
+        <CardContent className="flex flex-col gap-4 overflow-y-scroll max-h-[40rem] p-4 custom-scrollbar" tabIndex={-1}>
           {
             (time && time.length > 0 ? time : Array(7).fill(null)).map((_: any, i: number) => (
               <Card className="border-neutral-600 bg-neutral-700 p-2" key={`hourly-${i}`}>

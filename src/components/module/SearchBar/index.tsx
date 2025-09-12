@@ -127,6 +127,12 @@ export default function SearchBar() {
                     key={`city-${k}`}
                     className="text-preset-7 p-3 rounded-sm hover:border-neutral-600 hover:bg-neutral-700 hover:cursor-pointer"
                     onClick={() => handleSelectedCity(city)}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter") {
+                        handleSelectedCity(city);
+                      }
+                    }}
+                    tabIndex={0}
                   >
                     {city.display_name}
                   </div>
@@ -146,6 +152,11 @@ export default function SearchBar() {
         className="h-14 w-full md:w-auto font-medium"
         disabled={loadingWeather}
         onClick={handleSearch}
+        onKeyDown={(e) => {
+          if (e.key === "Enter") {
+            handleSearch();
+          }
+        }}
       >
         Search
       </Button>
