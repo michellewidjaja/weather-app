@@ -59,7 +59,7 @@ export const WEATHER_UNITS = {
         label: "Fahrenheit (°F)"
       }
     ]
-},
+  },
   wind_speed_unit: {
     display_name: "Wind Speed",
     items: [
@@ -87,3 +87,8 @@ export const WEATHER_UNITS = {
     ]
   }
 }
+
+export const UNITS_SYSTEM_MAP = {
+  metric: { temperature_unit: "celsius", wind_speed_unit: "kmh", precipitation_unit: "mm" },
+  imperial: { temperature_unit: "fahrenheit", wind_speed_unit: "mph", precipitation_unit: "inch" }
+};
