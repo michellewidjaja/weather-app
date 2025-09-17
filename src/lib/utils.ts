@@ -22,6 +22,10 @@ export function createURLSearchParams(params: any) {
 }
 
 export function getLocationLabel(address: any): string {
+  if (!address || typeof address !== "object") {
+    return "Unknown";
+  }
+  
   const place =
     address.city ||
     address.town ||
