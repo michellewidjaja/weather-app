@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import CurrentForecast from "./CurrentForecast";
 import CurrentForecastMetrics from "./CurrentForecastMetrics";
 import DailyForecast from "./DailyForecast";
@@ -12,8 +12,19 @@ interface WeatherForecastProps {
 
 export default function WeatherForecast({ weatherResult, geoLocation }: WeatherForecastProps) {
   const { loading } = useWeather();
+  const [showNoResult, setShowNoResult] = useState(false);
 
-  if (!geoLocation?.lat && !geoLocation?.lon && !loading) {
+  useEffect(() => {
+    if (!loading && (!geoLocation?.lat || !geoLocation?.lon)) {
+      const timer = setTimeout(() => setShowNoResult(true), 500);
+      return () => clearTimeout(timer);
+    } else {
+      setShowNoResult(false);
+    }
+  }, [loading, geoLocation]);
+
+
+  if (showNoResult) {
     return (
       <div className="text-preset-4 text-center w-full font-bold mx-auto">
         No search result found!
