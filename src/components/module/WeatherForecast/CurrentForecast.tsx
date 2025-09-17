@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { useWeather } from "@/context/WeatherContext";
 import { format } from "date-fns";
@@ -17,7 +17,21 @@ export default function CurrentForecast({ weatherResult, geoLocation }: CurrentF
   const { temperature_2m, time, weather_code, is_day } = current || {};
   const { address } = geoLocation || {};
   const { loading } = useWeather();
+  const [weatherBackground, setWeatherBackground] = useState<string>("");
 
+  useEffect(() => {
+    const hour = time ? new Date(time).getHours() : null;
+    if (is_day === 1 && hour) {
+      if (hour >= 5 && hour <= 7) {
+        setWeatherBackground("linear-gradient(to top, rgb(255 204 110 / 72%), rgba(255, 133, 73, 0.6), rgba(120, 198, 250, 0.6))");
+      } else if (hour >= 17 && hour <= 19) {
+        setWeatherBackground("linear-gradient(to top, rgb(255 149 43 / 54%), rgb(58 82 175 / 40%))");
+      } else {
+        setWeatherBackground("linear-gradient(to top, rgba(149, 209, 249, 0.53), rgba(64, 132, 227, 0.48))");
+      }
+    }
+  }, [time]);
+  
   return (
     <div className="w-full relative">
       {
@@ -29,9 +43,7 @@ export default function CurrentForecast({ weatherResult, geoLocation }: CurrentF
               <div
                 className={`absolute inset-0 transition-all duration-700 rounded-[1.25rem]`}
                 style={{
-                  background: is_day === 1
-                    ? "linear-gradient(to top, rgba(149, 209, 249, 0.53), rgba(64, 132, 227, 0.48))" // sunrise/day
-                    : "",
+                  background: weatherBackground,
                 }}
               />
             </div>
