@@ -28,7 +28,7 @@ export default function Header() {
 
   return (
     <header className="flex justify-between p-6">
-      <Image src="/logo.svg" width={200} height={150} alt="Weather Logo" />
+      <Image src="/logo.svg" width={200} height={150} alt="Weather Logo" priority />
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <Button variant="neutral"><Image src="/icon-units.svg" width={20} height={20} alt="icon units" />Units <ChevronDown /></Button>
