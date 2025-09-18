@@ -1,3 +1,6 @@
+import { Thermometer, Droplets, Wind, CloudRain } from "lucide-react";
+import { type LucideIcon } from "lucide-react";
+
 export const WEATHER_CODE_MAP: Record<number, { label: string; icon: string }> = {
   0: { label: "Clear sky", icon: "/icon-sunny.webp" },
   1: { label: "Mainly clear", icon: "/icon-sunny.webp" },
@@ -27,20 +30,24 @@ export const WEATHER_CODE_MAP: Record<number, { label: string; icon: string }> =
 
 export const DAYS: string[] = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
-export const CURRENT_DISPLAY:{ title: string; key: string }[] = [
+export const CURRENT_DISPLAY:{ icon: LucideIcon; title: string; key: string }[] = [
   {
+    icon: Thermometer, 
     title: 'Feels Like',
     key: 'apparent_temperature',
   },
   {
+    icon: Droplets,
     title: 'Humidity',
     key: 'relative_humidity_2m'
   },
   {
+    icon: Wind, 
     title: 'Wind',
     key: 'wind_speed_10m'
   },
   {
+    icon: CloudRain,
     title: 'Precipitation',
     key: 'precipitation'
   }

@@ -24,7 +24,7 @@ export default function DailyForecast({ dailyResult: daily }: DailyForecastProps
               {
                 !loading && daily && (
                   <CardContent className="text-preset-7 h-full flex flex-col justify-between items-center gap-4 h-full">
-                    <div className="text-preset-6">{time ? format(time?.[i], "EEE") : "-"}</div>
+                    <div className="text-preset-6 text-neutral-200">{time ? format(time?.[i], "EEE") : "-"}</div>
                     <div><Image src={WEATHER_CODE_MAP[weathercode?.[i]]?.icon} width={100} height={100} alt="weather" /></div>
                     <div className="flex justify-between w-full">
                       <div>{fixedNumber(temperature_2m_max?.[i])}°</div>
