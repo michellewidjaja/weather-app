@@ -15,7 +15,7 @@ export default function WeatherForecast({ weatherResult, geoLocation }: WeatherF
   const [showNoResult, setShowNoResult] = useState(false);
 
   useEffect(() => {
-    if (!loading && (!geoLocation?.lat || !geoLocation?.lon)) {
+    if (!loading && (!geoLocation?.lat || !geoLocation?.lon || !weatherResult)) {
       const timer = setTimeout(() => setShowNoResult(true), 500);
       return () => clearTimeout(timer);
     } else {
@@ -33,13 +33,15 @@ export default function WeatherForecast({ weatherResult, geoLocation }: WeatherF
   }
 
   return (
-    <section className="grid grid-cols-1 lg:grid-cols-[70%_30%] gap-8">
-      <div>
-        <CurrentForecast weatherResult={weatherResult} geoLocation={geoLocation} />
-        <CurrentForecastMetrics weatherResult={weatherResult} />
-        <DailyForecast dailyResult={weatherResult?.daily} />
-      </div>
-      <HourlyForecast hourlyResult={weatherResult?.hourly} dailyResult={weatherResult?.daily}/>
+    <section>
+      <div className="grid grid-cols-1 lg:grid-cols-[70%_30%] gap-8">
+          <div>
+            <CurrentForecast weatherResult={weatherResult} geoLocation={geoLocation} />
+            <CurrentForecastMetrics weatherResult={weatherResult} />
+            <DailyForecast dailyResult={weatherResult?.daily} />
+          </div>
+          <HourlyForecast hourlyResult={weatherResult?.hourly} dailyResult={weatherResult?.daily}/>
+        </div>
     </section>
   )
 }

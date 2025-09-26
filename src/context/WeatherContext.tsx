@@ -19,7 +19,7 @@ interface WeatherContextType {
 const WeatherContext = createContext<WeatherContextType | undefined>(undefined);
 
 export const WeatherProvider: React.FC<{children: React.ReactNode}> = ({ children }) => {
-  const [loading, setLoading] = useState<boolean>(true);
+  const [loading, setLoading] = useState<boolean>(false);
   const [coords, setCoords] = useState<Position | null>(null);
   const [error, setError] = useState<string | null>(null);
 

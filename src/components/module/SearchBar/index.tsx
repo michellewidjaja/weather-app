@@ -150,7 +150,7 @@ export default function SearchBar() {
       <Button
         size="lg"
         className="h-14 w-full md:w-auto font-medium"
-        disabled={loadingWeather}
+        disabled={loadingWeather || !query}
         onClick={handleSearch}
         onKeyDown={(e) => {
           if (e.key === "Enter") {

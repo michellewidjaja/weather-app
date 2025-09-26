@@ -21,7 +21,7 @@ export default function WeatherSearchContainer() {
         },
         (err) => setError(err.message)
       )
-    } 
+    }
   }, []);
 
   useEffect(() => {
